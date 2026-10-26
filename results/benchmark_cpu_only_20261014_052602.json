@@ -1,0 +1,92 @@
+{
+  "benchmark_id": "d4717afe650f",
+  "created_at": "2026-10-14T05:26:02+00:00",
+  "repeats": 5,
+  "seed": 42,
+  "threshold": 3.0,
+  "gpu_status": {
+    "available": false,
+    "executes_cuda": false,
+    "source": null,
+    "mode": "auto",
+    "device_name": null,
+    "compute_capability": null,
+    "cuda_runtime_version": null,
+    "cuda_driver_version": null,
+    "sm_count": null,
+    "total_memory_mb": null,
+    "library_path": null,
+    "remote_host": null,
+    "nvcc_found": false,
+    "reason": "CUDA library not built (expected /home/claude/gpu-anomaly-warning-system/backend/cuda/build/libanomaly.so; see backend/cuda/README.md)."
+  },
+  "records": [
+    {
+      "n": 1000,
+      "anomalies_cpu": 3,
+      "cpu": {
+        "median_ms": 0.010865999996667597,
+        "min_ms": 0.009366999989879332,
+        "max_ms": 0.017544000002089888,
+        "stdev_ms": 0.002900010720322999,
+        "runs": 5
+      },
+      "gpu": null,
+      "speedup_end_to_end": null,
+      "speedup_kernel_only": null,
+      "agreement": null
+    },
+    {
+      "n": 10000,
+      "anomalies_cpu": 32,
+      "cpu": {
+        "median_ms": 0.02711700000190831,
+        "min_ms": 0.023699000010424243,
+        "max_ms": 0.06194099999845548,
+        "stdev_ms": 0.015860332936031108,
+        "runs": 5
+      },
+      "gpu": null,
+      "speedup_end_to_end": null,
+      "speedup_kernel_only": null,
+      "agreement": null
+    },
+    {
+      "n": 100000,
+      "anomalies_cpu": 336,
+      "cpu": {
+        "median_ms": 0.6690249999934395,
+        "min_ms": 0.31822900000122445,
+        "max_ms": 1.1459139999914214,
+        "stdev_ms": 0.3560781576270918,
+        "runs": 5
+      },
+      "gpu": null,
+      "speedup_end_to_end": null,
+      "speedup_kernel_only": null,
+      "agreement": null
+    },
+    {
+      "n": 1000000,
+      "anomalies_cpu": 3182,
+      "cpu": {
+        "median_ms": 3.278066999996554,
+        "min_ms": 2.914096000012023,
+        "max_ms": 7.353649999998879,
+        "stdev_ms": 2.0209147393206184,
+        "runs": 5
+      },
+      "gpu": null,
+      "speedup_end_to_end": null,
+      "speedup_kernel_only": null,
+      "agreement": null
+    }
+  ],
+  "notes": [
+    "CPU baseline is vectorised NumPy (float64), not a naive Python loop; speedups are relative to that baseline.",
+    "CPU time covers statistics + Z-scores + classification on in-memory data.",
+    "GPU end-to-end = allocation + host-to-device copy + kernels + device-to-host copy (wall clock). GPU kernel-only excludes allocation and transfers. Both use CUDA events/synchronisation.",
+    "Speedup = CPU median / GPU median, reported only when the GPU time is positive.",
+    "GPU unavailable: CUDA library not built (expected /home/claude/gpu-anomaly-warning-system/backend/cuda/build/libanomaly.so; see backend/cuda/README.md). GPU columns are empty; no GPU numbers were simulated."
+  ]
+}

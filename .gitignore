@@ -1,0 +1,9 @@
+node_modules/
+dist/
+__pycache__/
+*.pyc
+.venv/
+.env
+backend/cuda/build/
+.pytest_cache/
+*.zip

@@ -1,0 +1,5 @@
+benchmark_id,n,repeats,cpu_median_ms,cpu_stdev_ms,gpu_available,gpu_kernel_median_ms,gpu_h2d_median_ms,gpu_d2h_median_ms,gpu_total_median_ms,gpu_total_stdev_ms,speedup_end_to_end,speedup_kernel_only,threads_per_block,blocks_reduce,agreement_passed,flag_mismatches,max_abs_z_diff
+d4717afe650f,1000,5,0.010865999996667597,0.002900010720322999,False,,,,,,,,,,,,
+d4717afe650f,10000,5,0.02711700000190831,0.015860332936031108,False,,,,,,,,,,,,
+d4717afe650f,100000,5,0.6690249999934395,0.3560781576270918,False,,,,,,,,,,,,
+d4717afe650f,1000000,5,3.278066999996554,2.0209147393206184,False,,,,,,,,,,,,
